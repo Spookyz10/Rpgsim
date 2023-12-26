@@ -375,7 +375,7 @@ if mob.Name == "Chil" then -- we dont wanna target useless stuff right
             swing = true
             repeat
                 if table.find(getgenv().settings['farmsettings']['silencers'], game.Players.LocalPlayer.Name) then
-                    game.Players.LocalPlayer.Character:WaitForChild('HumanoidRootPart').CFrame = mob.HumanoidRootPart.CFrame + Vector3.new(0,0,5)
+                    game.Players.LocalPlayer.Character:WaitForChild('HumanoidRootPart').CFrame = mob.HumanoidRootPart.CFrame + Vector3.new(0,8,5)
                 else
                     if not type then
                         if getgenv().adaffvca then
