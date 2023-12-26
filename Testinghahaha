@@ -2,7 +2,7 @@ repeat wait() until game:IsLoaded()
 repeat wait() until game:GetService("Players").LocalPlayer:WaitForChild('Loaded').Value == true
 repeat wait() until (#game:GetService("Workspace"):WaitForChild('Mobs'):GetChildren()) > 0
 if workspace.Mobs:FindFirstChild("Queen's Egg") then
-    repeat wait() until workspace.Mobs:FindFirstChild('Hive Guard') -- wanna kill the guards before it goes to the queen egg in hive raid
+    repeat wait() until workspace.Mobs:FindFirstChild('Mage of Ice') -- wanna kill the guards before it goes to the queen egg in hive raid
 end
 
 abort = false
@@ -247,7 +247,7 @@ sell()
 function gettarget()
     local target = game:GetService("Workspace"):WaitForChild('Mobs'):FindFirstChild('Crystal') or game:GetService("Workspace"):WaitForChild('Mobs'):FindFirstChild('Stand')
     if not target then
-        target = workspace:WaitForChild('Mobs'):FindFirstChild("Hive Queen") or workspace:WaitForChild('Mobs'):FindFirstChild("Hive Guard") or game:GetService("Workspace"):WaitForChild('Mobs'):FindFirstChildWhichIsA("Model")
+        target = workspace:WaitForChild('Mobs'):FindFirstChild("Hive Queen") or workspace:WaitForChild('Mobs'):FindFirstChild("Mage of Ice") or game:GetService("Workspace"):WaitForChild('Mobs'):FindFirstChildWhichIsA("Model")
     end
     if target then
         if getgenv().settings['farmsettings']['mobsettings'][target.Name] then
@@ -300,9 +300,9 @@ function farmraid()
                 print(s)
             end
         end
-        if workspace.Mobs:FindFirstChild('Hive Guard') then
+        if workspace.Mobs:FindFirstChild('Mage of Ice') then
             for _,v in pairs(workspace.Mobs:GetChildren()) do
-                if v.Name == "Hive Guard" then
+                if v.Name == "Mage of Ice" then
                     pcall(function()
                         if not workspace.Mobs:FindFirstChild('Hive Queen') then
                             if v.Humanoid.WalkToPoint == Vector3.new(0,8,0) then
