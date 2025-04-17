@@ -142,7 +142,7 @@ args = {
 
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TriggerReset"):FireServer(unpack(args))
 
-wait(1)
+wait(10)
 
 args = {
     [1] = "rocketPart"
@@ -150,7 +150,7 @@ args = {
 
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TriggerReset"):FireServer(unpack(args))
 
-wait(1)
+wait(2)
 
 args = {
     [1] = "galactic"
@@ -160,7 +160,7 @@ game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Trigg
 
 switchGrass("anti")
 
-wait(5)
+wait(10)
 args = {
     [1] = "grassskip"
 }
