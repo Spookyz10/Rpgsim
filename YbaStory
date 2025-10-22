@@ -228,7 +228,15 @@ local function useItem(aItem, amount)
 
     if amount then
         LocalPlayer.Character.Humanoid:EquipTool(item)
-        LocalPlayer.Character:WaitForChild("RemoteFunction"):InvokeServer("LearnSkill",{"Skill" = "Worthiness","SkillTreeType" = "Character"})
+        local args = {
+			"LearnSkill",
+			{
+				Skill = "Worthiness",
+				SkillTreeType = "Character"
+			}
+		}
+		LocalPlayer.Character:WaitForChild("RemoteFunction"):InvokeServer(unpack(args))
+
         repeat item:Activate() task.wait() until LocalPlayer.PlayerGui:FindFirstChild("DialogueGui")
         firesignal(LocalPlayer.PlayerGui:WaitForChild("DialogueGui").Frame.ClickContinue.MouseButton1Click)
         firesignal(LocalPlayer.PlayerGui:WaitForChild("DialogueGui").Frame.Options:WaitForChild("Option1").TextButton.MouseButton1Click)
