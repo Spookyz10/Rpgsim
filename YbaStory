@@ -239,6 +239,9 @@ local function useItem(aItem, amount)
 
         repeat item:Activate() task.wait() until LocalPlayer.PlayerGui:FindFirstChild("DialogueGui")
         firesignal(LocalPlayer.PlayerGui:WaitForChild("DialogueGui").Frame.ClickContinue.MouseButton1Click)
+		if (LocalPlayer.PlayerGui.DialogueGui.Frame:FindFirstChild("ClickContinue")) then
+			firesignal(LocalPlayer.PlayerGui.DialogueGui.Frame.ClickContinue.MouseButton1Click)
+		end
         firesignal(LocalPlayer.PlayerGui:WaitForChild("DialogueGui").Frame.Options:WaitForChild("Option1").TextButton.MouseButton1Click)
         firesignal(LocalPlayer.PlayerGui:WaitForChild("DialogueGui").Frame.ClickContinue.MouseButton1Click)
 		repeat task.wait() until LocalPlayer.PlayerGui:WaitForChild("DialogueGui").Frame.DialogueFrame.Frame.Line001.Container.Group001.Text == "You"
